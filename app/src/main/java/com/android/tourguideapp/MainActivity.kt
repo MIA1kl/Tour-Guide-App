@@ -1,46 +1,79 @@
 package com.android.tourguideapp
 
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
-import androidx.viewpager.widget.ViewPager
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.BlendModeColorFilterCompat
+import androidx.core.graphics.BlendModeCompat
 import com.android.tourguideapp.adapters.MyAdapter
 import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var tabLayout: TabLayout
-    private lateinit var viewPager: ViewPager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        tabLayout.setSelectedTabIndicatorColor(Color.WHITE)
+        tabLayout.tabTextColors = ContextCompat.getColorStateList(this, android.R.color.white)
 
-        tabLayout = findViewById(R.id.tabLayout)
-        viewPager = findViewById(R.id.viewPager)
+        val numberOfTabs = 3
 
-        tabLayout.addTab(tabLayout.newTab().setText("Sights"))
-        tabLayout.addTab(tabLayout.newTab().setText("Restaurants"))
-        tabLayout.addTab(tabLayout.newTab().setText("Nature"))
-        tabLayout.tabGravity = TabLayout.GRAVITY_FILL
+        tabLayout.tabMode = TabLayout.MODE_FIXED
+        tabLayout.isInlineLabel = true
 
-        val adapter = MyAdapter(this, supportFragmentManager,
-        tabLayout.tabCount)
+        val adapter = MyAdapter(supportFragmentManager, lifecycle, numberOfTabs)
         viewPager.adapter = adapter
 
-        viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
-        tabLayout.addOnTabSelectedListener(object :TabLayout.OnTabSelectedListener{
-            override fun onTabSelected(tab: TabLayout.Tab?) {
-                viewPager.currentItem = tab!!.position
-            }
+        viewPager.isUserInputEnabled = true
 
-            override fun onTabUnselected(tab: TabLayout.Tab?) {
-                TODO("Not yet implemented")
-            }
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            when (position) {
+                0 -> {
+                    tab.setIcon(R.drawable.ic_launcher_foreground)
+                }
+                1 -> {
+                    tab.setIcon(R.drawable.ic_launcher_foreground)
 
-            override fun onTabReselected(tab: TabLayout.Tab?) {
-                TODO("Not yet implemented")
-            }
+                }
+                2 -> {
+                    tab.setIcon(R.drawable.ic_launcher_foreground)
+                }
 
-        })
+            }
+            tab.icon?.colorFilter =
+                BlendModeColorFilterCompat.createBlendModeColorFilterCompat(
+                    Color.WHITE,
+                    BlendModeCompat.SRC_ATOP
+                )
+        }.attach()
+
+
+        setCustomTabTitles()
     }
+
+    private fun setCustomTabTitles() {
+        val vg = tabLayout.getChildAt(0) as ViewGroup
+        val tabsCount = vg.childCount
+
+        for (j in 0 until tabsCount) {
+            val vgTab = vg.getChildAt(j) as ViewGroup
+
+            val tabChildCount = vgTab.childCount
+
+            for (i in 0 until tabChildCount) {
+                val tabViewChild = vgTab.getChildAt(i)
+                if (tabViewChild is TextView) {
+                    tabViewChild.typeface = Typeface.DEFAULT_BOLD
+                }
+            }
+        }
+    }
+
 }

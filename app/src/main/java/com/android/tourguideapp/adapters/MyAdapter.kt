@@ -1,32 +1,44 @@
 package com.android.tourguideapp.adapters
 
-import android.content.Context
+import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
+import androidx.lifecycle.Lifecycle
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.android.tourguideapp.fragments.Nature
 import com.android.tourguideapp.fragments.Restaurants
 import com.android.tourguideapp.fragments.Sightseeings
 
-internal class MyAdapter(var context: Context, fm: FragmentManager, var totalTabs: Int): FragmentPagerAdapter(fm){
+class MyAdapter(fm: FragmentManager, lifecycle: Lifecycle, private var numberOfTabs: Int) : FragmentStateAdapter(fm, lifecycle) {
 
-
-    override fun getItem(position: Int): Fragment {
-        return when(position){
+    override fun createFragment(position: Int): Fragment {
+        when (position) {
             0 -> {
-                Sightseeings()
+                val bundle = Bundle()
+                bundle.putString("fragmentName", "Sights")
+                val sightseengs = Sightseeings()
+                sightseengs.arguments = bundle
+                return sightseengs
             }
             1 -> {
-                Restaurants()
+                val bundle = Bundle()
+                bundle.putString("fragmentName", "Restaurants")
+                val restaurants = Restaurants()
+                restaurants.arguments = bundle
+                return restaurants
             }
             2 -> {
-                Nature()
+                val bundle = Bundle()
+                bundle.putString("fragmentName", "Nature")
+                val nature = Nature()
+                nature.arguments = bundle
+                return nature
             }
-            else -> getItem(position)
+            else -> return Sightseeings()
         }
     }
 
-    override fun getCount(): Int {
-        return totalTabs
+    override fun getItemCount(): Int {
+        return numberOfTabs
     }
 }
