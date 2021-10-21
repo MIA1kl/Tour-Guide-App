@@ -3,14 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/natureView"
+    android:background="#C8F8CA"
     tools:context=".fragments.Nature">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/nature"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:textStyle="italic"/>
 
 </FrameLayout>

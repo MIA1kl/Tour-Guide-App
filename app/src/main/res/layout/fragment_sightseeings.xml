@@ -3,14 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/sightsView"
+    android:background="#C6F4FA"
     tools:context=".fragments.Sightseeings">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/sights"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:textStyle="italic"/>
 
 </FrameLayout>
