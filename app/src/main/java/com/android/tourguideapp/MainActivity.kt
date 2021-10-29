@@ -9,7 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.BlendModeColorFilterCompat
 import androidx.core.graphics.BlendModeCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.android.tourguideapp.adapters.CardsAdapter
 import com.android.tourguideapp.adapters.MyAdapter
+import com.android.tourguideapp.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*
@@ -17,11 +20,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        tabLayout.setSelectedTabIndicatorColor(Color.WHITE)
-        tabLayout.tabTextColors = ContextCompat.getColorStateList(this, android.R.color.white)
+
+        tabLayout.setSelectedTabIndicatorColor(Color.BLUE)
+        tabLayout.tabTextColors = ContextCompat.getColorStateList(this, R.color.purple)
 
         val numberOfTabs = 3
 

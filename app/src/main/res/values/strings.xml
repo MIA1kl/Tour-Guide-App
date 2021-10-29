@@ -5,4 +5,7 @@
     <string name="sights">Sights</string>
     <string name="restaurants">Restaurants</string>
     <string name="nature">Nature</string>
+    <string name="move_up">Move Up</string>
+    <string name="move_down">Move Down</string>
+    <string name="remove">Remove</string>
 </resources>
