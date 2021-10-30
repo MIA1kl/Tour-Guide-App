@@ -3,62 +3,141 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="#FDF8CC">
+    xmlns:tools="http://schemas.android.com/tools">
 <androidx.cardview.widget.CardView
-    android:id="@+id/category_item"
-    android:clickable="true"
-    android:focusable="true"
+    android:id="@+id/categoryItem"
+    app:cardBackgroundColor="#F5F5DC"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     card_view:cardUseCompatPadding="true"
-    card_view:cardElevation="5dp">
+    card_view:cardElevation="3dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_id"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <ImageView
-        android:id="@+id/photoImageView"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:contentDescription="Photo of an item"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_baseline_image_24"/>
+
+        <ImageView
+            android:id="@+id/photoImageView"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="Photo of an item"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/cardNameTextView"
+            app:layout_constraintHorizontal_bias="0.017"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:src="@drawable/ic_baseline_image_24" />
 
         <TextView
             android:id="@+id/cardNameTextView"
-            android:layout_width="292dp"
-            android:layout_height="37dp"
+            android:layout_width="266dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="16dp"
             android:ellipsize="end"
             android:lines="1"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@color/purple"
+            android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.846"
             app:layout_constraintStart_toEndOf="@+id/photoImageView"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.258"
+            app:layout_constraintVertical_bias="0.2"
             tools:text="Manas's Monument" />
 
-    <ImageView
-        android:id="@+id/moreImageViewButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:contentDescription="Manas's Monument"
-        android:src="@drawable/ic_baseline_arrow_drop_down_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.94"
-        app:layout_constraintStart_toEndOf="@+id/photoImageView"
-        app:layout_constraintTop_toBottomOf="@+id/cardNameTextView"
-        app:layout_constraintVertical_bias="0.818"
-        android:background="?android:attr/selectableItemBackgroundBorderless"/>
+        <ImageButton
+            android:id="@+id/moreImageViewButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_baseline_arrow_drop_down_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.93"
+            app:layout_constraintStart_toEndOf="@+id/photoImageView"
+            app:layout_constraintTop_toBottomOf="@+id/cardNameTextView"
+            app:layout_constraintVertical_bias="0.818"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            app:tint="@color/purple"
+            android:contentDescription="Expand card" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/expandableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:visibility="gone"
+       >
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="390dp"
+            android:layout_height="199dp"
+            android:layout_margin="5dp"
+            android:text="Osh Bazaar is one of the largest bazaars in Bishkek Kyrgyzstan. It is located on the west side of town and is not far from the Western Bus Station. At Osh Bazaar one can buy food products almost any common household good clothes souvenirs and even musical instruments. "
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/number"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/phone_img"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/ic_phone"
+            app:tint="@color/purple"
+            app:layout_constraintHorizontal_bias="0.93"
+            app:layout_constraintTop_toBottomOf="@id/info"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.818" />
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="343dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:text="+9967738659439"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/phone_img"
+            app:layout_constraintTop_toBottomOf="@id/info" />
+
+        <ImageView
+            android:id="@+id/address_img"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_address"
+            app:layout_constraintHorizontal_bias="0.93"
+            app:layout_constraintTop_toBottomOf="@id/phone_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.818"
+            app:tint="@color/purple" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="348dp"
+            android:layout_height="29dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Moskovskayast 598"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/expandableLayout"
+            app:layout_constraintStart_toEndOf="@id/address_img"
+
+            app:layout_constraintTop_toBottomOf="@id/number" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,6 +1,8 @@
 package com.android.tourguideapp.fragments
 
 import android.os.Bundle
+import android.transition.AutoTransition
+import android.transition.TransitionManager
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,24 +17,25 @@ import com.android.tourguideapp.models.CardsListener
 import com.android.tourguideapp.models.CardsService
 import com.android.tourguideapp.models.Card
 import com.github.javafaker.App
+import kotlinx.android.synthetic.main.item_card.*
 
 class Sightseeings : Fragment() {
 
     private lateinit var binding: FragmentSightseeingsBinding
     private lateinit var adapter1: CardsAdapter
-//
-//    private val cardsService: CardsService
-//        get() = (context as App).cardsService
-    
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         binding = FragmentSightseeingsBinding.inflate(layoutInflater)
         val placeList = mutableListOf<Card>(
-            Card(1,"https://images.unsplash.com/photo-1600267185393-e158a98703de?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218fHx8fHx8fHwxNjI0MDE0NjQ0&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800","Manas")
+            Card(1,"https://photos.wikimapia.org/p/00/07/58/88/16_big.jpg","Manas's monument","khashdfkjhuehuwkhskjhfjadshfjkahjsdhfjhjahk jkajlksdjflkajlksjdkajfkajk"),
+            Card(2,"https://dook-international.sgp1.cdn.digitaloceanspaces.com/dook/images/poi/xSQej1614581106.jpg","Osh Bazaar","khashdfkjhuehuwkhskjhfjadshfjkahjsdhfjhjahk jkajlksdjflkajlksjdkajfkajk"),
+            Card(3,"https://dook-international.sgp1.cdn.digitaloceanspaces.com/dook/images/poi/CDiGe7HI1625217146.jpg","Panfilov Park","khashdfkjhuehuwkhskjhfjadshfjkahjsdhfjhjahk jkajlksdjflkajlksjdkajfkajk"),
+
         )
 
         adapter1 = CardsAdapter(placeList)
@@ -41,11 +44,16 @@ class Sightseeings : Fragment() {
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = adapter1
 
+//        binding.moreImageViewButton.setOnClickListener {
+//            Toast.makeText(this.context, "Sign in", Toast.LENGTH_LONG).show()
+//        }
 
 
         return binding.root
 
     }
+
+
 
 
 }

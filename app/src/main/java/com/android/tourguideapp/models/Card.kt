@@ -3,5 +3,8 @@ package com.android.tourguideapp.models
 data class Card(
     val id: Long,
     val photo: String,
-    val name: String
+    val name: String,
+    val info: String,
+//    val phone:String,
+
 )

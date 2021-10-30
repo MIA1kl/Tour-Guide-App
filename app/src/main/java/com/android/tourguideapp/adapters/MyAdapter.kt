@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.android.tourguideapp.fragments.Nature
+import com.android.tourguideapp.fragments.Hotels
 import com.android.tourguideapp.fragments.Restaurants
 import com.android.tourguideapp.fragments.Sightseeings
 
@@ -29,10 +29,10 @@ class MyAdapter(fm: FragmentManager, lifecycle: Lifecycle, private var numberOfT
             }
             2 -> {
                 val bundle = Bundle()
-                bundle.putString("fragmentName", "Nature")
-                val nature = Nature()
-                nature.arguments = bundle
-                return nature
+                bundle.putString("fragmentName", "Hotels")
+                val hotels = Hotels()
+                hotels.arguments = bundle
+                return hotels
             }
             else -> return Sightseeings()
         }

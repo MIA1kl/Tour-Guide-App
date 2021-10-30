@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:id="@+id/sightsView"
-        android:background="#C6F4FA"
+        android:background="#D3F7FB"
         tools:context=".fragments.Sightseeings">
 
         <androidx.recyclerview.widget.RecyclerView
