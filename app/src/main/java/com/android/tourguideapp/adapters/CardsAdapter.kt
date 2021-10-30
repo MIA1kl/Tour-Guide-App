@@ -15,6 +15,11 @@ import com.android.tourguideapp.models.Card
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_card.view.*
 import java.security.AccessController.getContext
+import androidx.core.content.ContextCompat.startActivity
+
+import android.content.Intent
+import android.net.Uri
+import androidx.core.content.ContextCompat
 
 
 class CardsAdapter(val cards: List<Card>) : RecyclerView.Adapter<CardsAdapter.CardsViewHolder>(){
@@ -26,14 +31,19 @@ class CardsAdapter(val cards: List<Card>) : RecyclerView.Adapter<CardsAdapter.Ca
         binding.moreImageViewButton.setOnClickListener {
             if (binding.expandableLayout.visibility == View.GONE) {
                 TransitionManager.beginDelayedTransition(binding.categoryItem, AutoTransition())
+                binding.moreImageViewButton.setImageResource(R.drawable.ic_baseline_arrow_drop_up_24)
                 binding.expandableLayout.visibility = View.VISIBLE
             } else {
                 TransitionManager.beginDelayedTransition(binding.categoryItem, AutoTransition())
+                binding.moreImageViewButton.setImageResource(R.drawable.ic_baseline_arrow_drop_down_24)
                 binding.expandableLayout.visibility = View.GONE
             }
         }
+
         return CardsViewHolder(binding)
     }
+
+
 
 
 
@@ -43,10 +53,13 @@ class CardsAdapter(val cards: List<Card>) : RecyclerView.Adapter<CardsAdapter.Ca
         with(holder.binding){
             holder.itemView.tag = card
             moreImageViewButton.tag = card
+            cardId.tag = card
             expandableLayout.tag = card
             categoryItem.tag = card
             cardNameTextView.text = card.name
             info.text = card.info
+            number.text = card.phone
+            address.text = card.address
             if (card.photo.isNotBlank()){
                 Glide.with(photoImageView.context)
                     .load(card.photo)

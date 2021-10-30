@@ -24,7 +24,7 @@ class Restaurants : Fragment() {
     ): View? {
         binding = FragmentSightseeingsBinding.inflate(layoutInflater)
         val placeList = mutableListOf<Card>(
-            Card(2,"https://photos.wikimapia.org/p/00/07/58/88/16_big.jpg","jdhgakjhkjhkjhkj","akjshfdkjhkjfhkhjhjkhjh")
+            Card(2,"https://photos.wikimapia.org/p/00/07/58/88/16_big.jpg","jdhgakjhkjhkjhkj","akjshfdkjhkjfhkhjhjkhjh","+996555555555","Moskva st.234")
         )
 
         adapter1 = CardsAdapter(placeList)

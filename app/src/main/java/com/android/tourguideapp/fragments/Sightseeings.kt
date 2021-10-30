@@ -32,23 +32,19 @@ class Sightseeings : Fragment() {
 
         binding = FragmentSightseeingsBinding.inflate(layoutInflater)
         val placeList = mutableListOf<Card>(
-            Card(1,"https://photos.wikimapia.org/p/00/07/58/88/16_big.jpg","Manas's monument","khashdfkjhuehuwkhskjhfjadshfjkahjsdhfjhjahk jkajlksdjflkajlksjdkajfkajk"),
-            Card(2,"https://dook-international.sgp1.cdn.digitaloceanspaces.com/dook/images/poi/xSQej1614581106.jpg","Osh Bazaar","khashdfkjhuehuwkhskjhfjadshfjkahjsdhfjhjahk jkajlksdjflkajlksjdkajfkajk"),
-            Card(3,"https://dook-international.sgp1.cdn.digitaloceanspaces.com/dook/images/poi/CDiGe7HI1625217146.jpg","Panfilov Park","khashdfkjhuehuwkhskjhfjadshfjkahjsdhfjhjahk jkajlksdjflkajlksjdkajfkajk"),
+            Card(1,"https://photos.wikimapia.org/p/00/07/58/88/16_big.jpg","Manas's monument","khashdfkjhuehuwkhskjhfjadshfjkahjsdhfjhjahk jkajlksdjflkajlksjdkajfkajk","+996555555555","Moskva st.234"),
+            Card(2,"https://dook-international.sgp1.cdn.digitaloceanspaces.com/dook/images/poi/xSQej1614581106.jpg","Osh Bazaar","Osh Bazaar is one of the largest bazaars in Bishkek Kyrgyzstan. It is located on the west side of town and is not far from the Western Bus Station. At Osh Bazaar one can buy food products almost any common household good clothes souvenirs and even musical instruments. ","+996555555555","Moskva st.234"),
+            Card(3,"https://dook-international.sgp1.cdn.digitaloceanspaces.com/dook/images/poi/CDiGe7HI1625217146.jpg","Panfilov Park","khashdfkjhuehuwkhskjhfjadshfjkahjsdhfjhjahk jkajlksdjflkajlksjdkajfkajk","+996555555555","Moskva st.234"),
 
         )
+
+
 
         adapter1 = CardsAdapter(placeList)
 
         val layoutManager = LinearLayoutManager(view?.context)
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = adapter1
-
-//        binding.moreImageViewButton.setOnClickListener {
-//            Toast.makeText(this.context, "Sign in", Toast.LENGTH_LONG).show()
-//        }
-
-
         return binding.root
 
     }

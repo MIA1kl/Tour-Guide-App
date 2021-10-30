@@ -5,6 +5,7 @@ data class Card(
     val photo: String,
     val name: String,
     val info: String,
-//    val phone:String,
+    val phone:String,
+    val address : String
 
 )

@@ -13,7 +13,7 @@
     card_view:cardElevation="3dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/card_id"
+        android:id="@+id/cardId"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
