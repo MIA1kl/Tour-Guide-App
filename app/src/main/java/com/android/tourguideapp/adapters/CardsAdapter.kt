@@ -52,7 +52,7 @@ class CardsAdapter(val cards: List<Card>) : RecyclerView.Adapter<CardsAdapter.Ca
         }
 
         binding.address.setOnClickListener{
-            val gmmIntentUri = Uri.parse("geo:42.87686384957963, 74.60375511319208")
+            val gmmIntentUri = Uri.parse("geo:"+binding.geo.text)
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
             it.context.startActivity(mapIntent)
         }
@@ -75,6 +75,7 @@ class CardsAdapter(val cards: List<Card>) : RecyclerView.Adapter<CardsAdapter.Ca
             info.text = card.info
             number.text = card.phone
             address.text = card.address
+            geo.text = card.geo
 
 
             if (card.photo.isNotBlank()){
