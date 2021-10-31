@@ -1,5 +1,7 @@
 package com.android.tourguideapp.adapters
 
+import android.Manifest
+import android.app.PendingIntent.getActivity
 import android.transition.AutoTransition
 import android.transition.TransitionManager
 import android.view.LayoutInflater
@@ -18,8 +20,11 @@ import java.security.AccessController.getContext
 import androidx.core.content.ContextCompat.startActivity
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.mifmif.common.regex.Main
 
 
 class CardsAdapter(val cards: List<Card>) : RecyclerView.Adapter<CardsAdapter.CardsViewHolder>(){
@@ -28,6 +33,7 @@ class CardsAdapter(val cards: List<Card>) : RecyclerView.Adapter<CardsAdapter.Ca
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemCardBinding.inflate(inflater, parent,false)
+
         binding.moreImageViewButton.setOnClickListener {
             if (binding.expandableLayout.visibility == View.GONE) {
                 TransitionManager.beginDelayedTransition(binding.categoryItem, AutoTransition())
@@ -38,15 +44,24 @@ class CardsAdapter(val cards: List<Card>) : RecyclerView.Adapter<CardsAdapter.Ca
                 binding.moreImageViewButton.setImageResource(R.drawable.ic_baseline_arrow_drop_down_24)
                 binding.expandableLayout.visibility = View.GONE
             }
+
+        binding.number.setOnClickListener{
+            val dialIntent = Intent(Intent.ACTION_DIAL)
+            dialIntent.data = Uri.parse("tel:" + binding.number.text)
+            it.context.startActivity(dialIntent)
         }
+
+        binding.address.setOnClickListener{
+            val gmmIntentUri = Uri.parse("geo:42.87686384957963, 74.60375511319208")
+            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+            it.context.startActivity(mapIntent)
+        }
+
+        }
+
 
         return CardsViewHolder(binding)
     }
-
-
-
-
-
 
     override fun onBindViewHolder(holder: CardsViewHolder, position: Int) {
         val card = cards[position]
@@ -60,6 +75,8 @@ class CardsAdapter(val cards: List<Card>) : RecyclerView.Adapter<CardsAdapter.Ca
             info.text = card.info
             number.text = card.phone
             address.text = card.address
+
+
             if (card.photo.isNotBlank()){
                 Glide.with(photoImageView.context)
                     .load(card.photo)

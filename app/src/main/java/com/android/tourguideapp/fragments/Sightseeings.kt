@@ -32,7 +32,7 @@ class Sightseeings : Fragment() {
 
         binding = FragmentSightseeingsBinding.inflate(layoutInflater)
         val placeList = mutableListOf<Card>(
-            Card(1,"https://photos.wikimapia.org/p/00/07/58/88/16_big.jpg","Manas's monument","khashdfkjhuehuwkhskjhfjadshfjkahjsdhfjhjahk jkajlksdjflkajlksjdkajfkajk","+996555555555","Moskva st.234"),
+            Card(1,"https://photos.wikimapia.org/p/00/07/58/88/16_big.jpg","Manas's monument","khashdfkjhuehuwkhskjhfjadshfjkahjsdhfjhjahk jkajlksdjflkajlksjdkajfkajk","0555555555","Moskva st.234","42.87686384957963, 74.60375511319208"),
             Card(2,"https://dook-international.sgp1.cdn.digitaloceanspaces.com/dook/images/poi/xSQej1614581106.jpg","Osh Bazaar","Osh Bazaar is one of the largest bazaars in Bishkek Kyrgyzstan. It is located on the west side of town and is not far from the Western Bus Station. At Osh Bazaar one can buy food products almost any common household good clothes souvenirs and even musical instruments. ","+996555555555","Moskva st.234"),
             Card(3,"https://dook-international.sgp1.cdn.digitaloceanspaces.com/dook/images/poi/CDiGe7HI1625217146.jpg","Panfilov Park","khashdfkjhuehuwkhskjhfjadshfjkahjsdhfjhjahk jkajlksdjflkajlksjdkajfkajk","+996555555555","Moskva st.234"),
 

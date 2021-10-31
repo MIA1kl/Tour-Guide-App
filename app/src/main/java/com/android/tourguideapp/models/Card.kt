@@ -6,6 +6,7 @@ data class Card(
     val name: String,
     val info: String,
     val phone:String,
-    val address : String
+    val address : String,
+    val geo: String
 
 )
