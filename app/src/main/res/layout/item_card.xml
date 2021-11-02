@@ -24,7 +24,7 @@
             android:layout_height="120dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:contentDescription="Photo of an item"
+            android:contentDescription="@string/photo_of_an_item"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/cardNameTextView"
             app:layout_constraintHorizontal_bias="0.017"
@@ -47,7 +47,7 @@
             app:layout_constraintStart_toEndOf="@+id/photoImageView"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.2"
-            tools:text="Manas's Monument" />
+            tools:text="Asia mall" />
 
         <ImageButton
             android:id="@+id/moreImageViewButton"
@@ -64,7 +64,7 @@
             app:layout_constraintVertical_bias="0.818"
             android:background="?android:attr/selectableItemBackgroundBorderless"
             app:tint="@color/purple"
-            android:contentDescription="Expand card" />
+            android:contentDescription="@string/expand_card" />
 
 
 
@@ -83,7 +83,7 @@
             android:layout_width="390dp"
             android:layout_height="199dp"
             android:layout_margin="5dp"
-            android:text="Osh Bazaar is one of the largest bazaars in Bishkek Kyrgyzstan. It is located on the west side of town and is not far from the Western Bus Station. At Osh Bazaar one can buy food products almost any common household good clothes souvenirs and even musical instruments. "
+            android:text="@string/osh_bazaar_is_one_of_the_largest_bazaars_in_bishkek_kyrgyzstan_it_is_located_on_the_west_side_of_town_and_is_not_far_from_the_western_bus_station_at_osh_bazaar_one_can_buy_food_products_almost_any_common_household_good_clothes_souvenirs_and_even_musical_instruments"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@id/number"
@@ -93,20 +93,21 @@
             android:id="@+id/phone_img"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
             android:src="@drawable/ic_phone"
             app:tint="@color/purple"
             app:layout_constraintHorizontal_bias="0.93"
             app:layout_constraintTop_toBottomOf="@id/info"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.818" />
+            app:layout_constraintVertical_bias="0.818"
+            android:contentDescription="@string/phone_img" />
 
         <TextView
             android:id="@+id/number"
             android:layout_width="343dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="5dp"
-            android:text="+9967738659439"
+            android:layout_marginStart="5dp"
+            android:text="@string/_9967738659439"
             android:textSize="18sp"
             android:textColor="@color/purple"
             android:textAppearance="@style/Widget.AppCompat.Spinner.Underlined"
@@ -117,7 +118,7 @@
             android:id="@+id/address_img"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="15dp"
             android:src="@drawable/ic_address"
@@ -125,16 +126,17 @@
             app:layout_constraintTop_toBottomOf="@id/phone_img"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintVertical_bias="0.818"
-            app:tint="@color/purple" />
+            app:tint="@color/purple"
+            android:contentDescription="@string/loc_img" />
 
         <TextView
             android:id="@+id/address"
             android:layout_width="348dp"
             android:layout_height="29dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:layout_marginBottom="15dp"
             android:layout_marginTop="5dp"
-            android:text="Moskovskayast 598"
+            android:text="@string/street"
             android:textSize="18sp"
             android:textColor="@color/purple"
             app:layout_constraintBottom_toBottomOf="@id/expandableLayout"
@@ -146,7 +148,7 @@
             android:id="@+id/geo"
             android:layout_width="348dp"
             android:layout_height="29dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:layout_marginBottom="15dp"
             android:layout_marginTop="5dp"
             android:visibility="gone"

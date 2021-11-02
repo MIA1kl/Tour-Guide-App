@@ -1,18 +1,14 @@
 package com.android.tourguideapp.fragments
 
 import android.os.Bundle
-import android.transition.AutoTransition
-import android.transition.TransitionManager
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.android.tourguideapp.R
 import com.android.tourguideapp.adapters.CardsAdapter
 import com.android.tourguideapp.databinding.FragmentSightseeingsBinding
 import com.android.tourguideapp.models.Card
-import kotlinx.android.synthetic.main.item_card.*
 
 class HotelsFragment : Fragment() {
 
@@ -22,7 +18,7 @@ class HotelsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSightseeingsBinding.inflate(layoutInflater)
         val placeList = mutableListOf<Card>(
             Card(1,"https://content.r9cdn.net/rimg/himg/51/74/1b/ostrovok-6965648-9bb831e1091d70ff2e60166a0db6b2880c095090-899355.jpg?width=335&height=268&crop=true","Garden Hotel","Garden hotel Bishkek is a cozy hotel in the center of Bishkek. Convenient location of the hotel in a quiet area near the main street of the city of Baitik Baatyr, 15 minutes from the Central Department Store and central squares.","+996770978880","115 улица Медерова, Бишкек 720052","42.852468052538, 74.61474652638042"),

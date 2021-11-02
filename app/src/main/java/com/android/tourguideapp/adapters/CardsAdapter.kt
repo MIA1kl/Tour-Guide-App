@@ -1,33 +1,20 @@
 package com.android.tourguideapp.adapters
 
-import android.Manifest
-import android.app.PendingIntent.getActivity
 import android.transition.AutoTransition
 import android.transition.TransitionManager
 import android.view.LayoutInflater
-import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
-import android.widget.PopupMenu
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.android.tourguideapp.R
 import com.android.tourguideapp.databinding.ItemCardBinding
 import com.android.tourguideapp.models.Card
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.item_card.view.*
-import java.security.AccessController.getContext
-import androidx.core.content.ContextCompat.startActivity
-
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.net.Uri
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import com.mifmif.common.regex.Main
 
 
-class CardsAdapter(val cards: List<Card>) : RecyclerView.Adapter<CardsAdapter.CardsViewHolder>(){
+class CardsAdapter(private val cards: List<Card>) : RecyclerView.Adapter<CardsAdapter.CardsViewHolder>(){
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardsViewHolder {

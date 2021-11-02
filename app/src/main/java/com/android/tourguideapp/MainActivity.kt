@@ -1,6 +1,5 @@
 package com.android.tourguideapp
 
-import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
@@ -11,10 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.BlendModeColorFilterCompat
 import androidx.core.graphics.BlendModeCompat
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.android.tourguideapp.adapters.CardsAdapter
 import com.android.tourguideapp.adapters.MyAdapter
-import com.android.tourguideapp.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*

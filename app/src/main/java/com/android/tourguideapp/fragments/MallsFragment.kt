@@ -1,23 +1,14 @@
 package com.android.tourguideapp.fragments
 
 import android.os.Bundle
-import android.transition.AutoTransition
-import android.transition.TransitionManager
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.android.tourguideapp.R
 import com.android.tourguideapp.adapters.CardsAdapter
 import com.android.tourguideapp.databinding.FragmentSightseeingsBinding
-import com.android.tourguideapp.models.CardsListener
-import com.android.tourguideapp.models.CardsService
 import com.android.tourguideapp.models.Card
-import com.github.javafaker.App
-import kotlinx.android.synthetic.main.item_card.*
 
 class MallsFragment : Fragment() {
 
